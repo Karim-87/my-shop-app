@@ -38,11 +38,11 @@ export default function SellProductPage() {
     }
 
     // Record sale
-    const sale: Omit<Sale, 'id'> = {
+    const sale: Omit<Sale,  'id'> = {
       productId: product.id!,
       quantity,
       price: product.price * quantity,
-      date: new Date().toISOString(),
+      date:  new Date(),
       customerId: customer.id!,
     };
     await db.sales.add(sale);
